@@ -22,7 +22,7 @@ export const MoodPicker: React.FC = () => {
           <View>
             <Pressable
               onPress={() => setSelectedMood(option)}
-              key={option.emoji}
+              key={option.emoji + option.description}
               style={[
                 styles.moodItem,
                 option.emoji === selectedMood?.emoji
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     letterSpacing: 1,
+    color: '#000000',
     textAlign: 'center',
     marginBottom: 20,
   },
