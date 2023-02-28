@@ -14,7 +14,7 @@ export const Home: React.FC = () => {
     <View style={styles.container}>
       <MoodPicker onSelect={handleSelectMood} />
       {moodList.map(item => (
-        <Text key={item.timestamp}>
+        <Text key={item.timestamp} style={styles.list}>
           {item.mood.emoji} {new Date(item.timestamp).toString()}
         </Text>
       ))}
@@ -26,5 +26,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+  },
+  list: {
+    color: '#000000',
+    padding: 5,
   },
 });
