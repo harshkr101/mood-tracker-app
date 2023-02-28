@@ -12,7 +12,7 @@ A simple mood tracking app built in react native.
 - Run `yarn start` to build and start the application
 - Either use a physical device or a emulator to run the app
 
-### Screens
+## Screens
 
 - Home Screen to select a mood
 - History Screen to view the moods history
