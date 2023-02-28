@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import {VictoryPie} from 'victory-native';
 import groupBy from 'lodash/groupBy';
 import {useAppContext} from '../App.provider';
@@ -14,6 +14,14 @@ export const Analytics: React.FC = () => {
       y: value.length,
     }),
   );
+
+  if (data.length === 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Nothing to show yet!</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -40,5 +48,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontSize: 30,
   },
 });
